@@ -1,0 +1,17 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServerRoute
+metadata:
+  name: httpbin
+  namespace: default
+spec:
+  host: global.example.com
+  upstreams:
+  - name: httpbin
+    service: httpbin
+    port: 8000
+  subroutes:
+  - path: /httpbin/test
+    action:
+      proxy:
+        upstream: httpbin
+        rewritePath: /

@@ -1,0 +1,10 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: global-ingress
+  namespace: nginx-ingress
+spec:
+  host: global.example.com
+  routes:
+  - path: /httpbin
+    route: default/httpbin
