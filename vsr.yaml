@@ -10,7 +10,7 @@ spec:
     service: httpbin
     port: 8000
   subroutes:
-  - path: /httpbin/test
+  - path: /httpbin/
     action:
       proxy:
         upstream: httpbin
